@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# 编译产物（以后的可执行文件统一编到 build/）
+build/
+*.o
+*.so
+*.out
+*.exe
+cuda/**/hello
+
+# 性能分析报告：文件太大，重要的手动加进来
+*.ncu-rep
+*.nsys-rep
+*.qdrep
+*.sqlite
+
+# 模型权重和缓存
+*.safetensors
+*.bin
+*.pt
+.cache/
+
+# 系统文件
+.DS_Store
