@@ -46,11 +46,11 @@
 
 照 [docs/setup-windows-wsl2.md](docs/setup-windows-wsl2.md) 一步步做。
 
-- [ ] 台式机：在 Windows 上把 NVIDIA 驱动更新到最新，装 WSL2 + Ubuntu。
-- [ ] WSL 里只装 CUDA Toolkit（12.8 以上，选 WSL-Ubuntu 版）。**不要在 WSL 里装 Linux 驱动**，WSL 用的是 Windows 那边的驱动。
-- [ ] 装 PyTorch：在 pytorch.org 选 CUDA 12.8 或更新的 wheel。确认 `torch.cuda.get_device_capability()` 返回 `(12, 0)`。Triton 会随 PyTorch 一起装好。
-- [ ] 用 `nvcc` 编译并跑通一个 hello-world kernel。
-- [ ] 试一下 `ncu`（Nsight Compute）能不能读到硬件计数器。读不到就记下来，第 4 周再决定要不要给台式机装 Ubuntu 双系统。
+- [x] 台式机：在 Windows 上把 NVIDIA 驱动更新到最新，装 WSL2 + Ubuntu。
+- [x] WSL 里只装 CUDA Toolkit（12.8 以上，选 WSL-Ubuntu 版）。**不要在 WSL 里装 Linux 驱动**，WSL 用的是 Windows 那边的驱动。
+- [x] 装 PyTorch：在 pytorch.org 选 CUDA 12.8 或更新的 wheel。确认 `torch.cuda.get_device_capability()` 返回 `(12, 0)`。Triton 会随 PyTorch 一起装好。
+- [x] 用 `nvcc` 编译并跑通一个 hello-world kernel。
+- [x] 试一下 `ncu`（Nsight Compute）能不能读到硬件计数器。读不到就记下来，第 4 周再决定要不要给台式机装 Ubuntu 双系统。
 - [ ] 配好从 Mac 远程连台式机：用 VS Code 或 Cursor 的 Remote-SSH；人不在家时用 Tailscale。
 - [x] 建 GitHub 仓库 `gpu-inference-lab`（私有）和目录骨架。
 - **交付**：`notes/env.md`，记下两台机器的 GPU 型号、compute capability，以及驱动、CUDA、PyTorch 的版本。
