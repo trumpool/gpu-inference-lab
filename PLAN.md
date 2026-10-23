@@ -29,6 +29,8 @@
 
 每周固定做的事：LeetCode 3–5 题；投递照常进行。
 
+从第 2 周起，每周再拿出 2–3 小时做 SGLang 副线（见下文），这部分时间算在上面的预算里。
+
 ## 里程碑
 
 | # | 截止 | 产出 |
@@ -37,8 +39,34 @@
 | M2 | 12/27 | Triton：Llama block 的融合 kernel 和 FlashAttention forward，附两张卡的 benchmark |
 | M3a | 1/10 | SGLang 和 vLLM 在 5070 Ti 上的 serving 实验报告 |
 | M3b | 1/31 | 迷你推理引擎：paged KV cache + continuous batching + prefix caching |
-| M4 | 2/7 | 至少一个提给 SGLang 或 vLLM 的 PR |
+| M4a | 11/30 | SGLang 第一个被合并的 PR，比如小 bug 修复、sm_120 兼容、补测试 |
+| M4b | 2/7 | 一个有分量、能写进简历的 SGLang 贡献，比如硬件适配、调度或缓存的性能问题、新模型支持 |
 | M5 | 3/7 | 简历更新、面试题库、模拟面试 |
+
+## SGLang 副线（第 2 周起，每周 2–3 小时）
+
+SGLang 的大部分代码是 Python，包括调度、radix cache、API、模型实现和测试。不用等 CUDA 学完，可以和主线同时做。
+
+- [ ] **第 2–3 周（10/19–11/1）：把 SGLang 跑起来，读主线代码**
+  - [ ] 在 5070 Ti 上装好 SGLang，先跑一个小模型（比如 Qwen2.5-1.5B），用 OpenAI 兼容接口发几个请求。
+  - [ ] 加入 SGLang 的 Slack，读一遍仓库里的贡献指南。
+  - [ ] 跟着一个请求，把 `python/sglang/srt/` 的主线读一遍：
+    - `entrypoints/`：请求怎么进来；
+    - `managers/`：tokenizer manager、scheduler、detokenizer 三个进程分别做什么；
+    - `mem_cache/`：radix cache 怎么复用前缀；
+    - `model_executor/`：模型怎么跑，包括 CUDA graph。
+  - **交付**：`notes/sglang_code_tour.md`，画出一个请求从进来到返回，一路经过哪些模块。
+- [ ] **第 4 周（11/2–11/8）：找 issue**
+  - [ ] 在 issue 里搜 `sm_120`、`RTX 50`、`5090`、`5070`、`Blackwell`，挑一个能在你的卡上复现的。
+  - [ ] 或者从 good first issue、help wanted 标签里挑一个。
+  - [ ] 动手之前，先在 issue 下面留言认领，或者在 Slack 上说一声，免得和别人撞车。
+- [ ] **第 5–6 周（11/9–11/22）：提 PR，跟进 review**
+  - [ ] 改动尽量小：一个 PR 只解决一件事，附上测试，跑过 pre-commit。
+  - [ ] 按 review 意见修改，直到合并。
+  - **交付**：**M4a**，第一个被合并的 PR，目标在 11/30 前。
+- [ ] **12 月起：挑一个有分量的方向**
+  - [ ] 比如 sm_120 的适配、调度或缓存的性能问题、新模型支持。寒假集中做。
+  - **交付**：**M4b**，2/7 前完成。
 
 ---
 
@@ -182,11 +210,11 @@
 - [ ] 写 README：架构图、设计取舍、测量数字。
 - **交付**：**M3b** 迷你推理引擎。
 
-## 第 17 周（2/1–2/7）开源贡献 → M4
+## 第 17 周（2/1–2/7）开源贡献收尾 → M4b
 
-- [ ] 在 SGLang 或 vLLM 里找 good first issue，比如文档、benchmark、测试、小 bug。
-- [ ] 你手上有消费级 Blackwell 卡（sm_120），这类卡的适配问题通常没多少人管。复现并修这类 bug 是很好的切入点。
-- **交付**：**M4** 至少提一个 PR。
+- [ ] 把 12 月起做的那个 SGLang 贡献收尾：补齐测试，写清楚 PR 描述，跟进 review 直到合并。
+- [ ] 还有余力的话，看看 vLLM 里有没有同类问题（比如 sm_120 适配）可以顺手修。
+- **交付**：**M4b**，一个有分量、能写进简历的开源贡献。
 
 ## 第 18 周（2/8–2/14）简历和 GitHub
 

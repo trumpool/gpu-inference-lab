@@ -39,7 +39,7 @@
 3. 安装基础工具：
 
    ```bash
-   sudo apt update && sudo apt install -y build-essential git python3-venv
+   sudo apt update && sudo apt install -y build-essential git python3-venv python3-dev
    ```
 
 4. 给 GitHub 配一把 SSH key，然后 clone 这个仓库：
@@ -66,9 +66,12 @@
    python3 -m venv .venv && source .venv/bin/activate
    pip install --upgrade pip
    pip install torch --index-url https://download.pytorch.org/whl/cu128
+   pip install numpy
    ```
 
    `cu128` 是对应 CUDA 12.8 的版本。如果 pytorch.org 上有更新的 `cuXXX`，用新的也可以。
+
+   `python3-dev` 是给 Triton 用的：它第一次运行时要编译一个 C 扩展，缺了会报 `Python.h: No such file or directory`。没装 `numpy` 的话，`import torch` 时会打一条警告。
 
 6. 验证环境：
 
