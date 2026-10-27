@@ -87,10 +87,10 @@ SGLang 的大部分代码是 Python，包括调度、radix cache、API、模型�
 
 面试窗口，面试准备优先，轻量，约 4–5 小时。
 
-- [ ] 读 Horace He 的 *Making Deep Learning Go Brrrr From First Principles*，搞清 compute-bound、memory-bound、overhead-bound 三种瓶颈。
+- [x] 读 Horace He 的 *Making Deep Learning Go Brrrr From First Principles*，搞清 compute-bound、memory-bound、overhead-bound 三种瓶颈。
 - [ ] 读 PMPP 前 3 章：host 和 device 的分工、kernel launch、grid / block / thread、多维索引。
-- [ ] 写两个 kernel：vector add、RGB 转灰度（2D），用 `cudaEvent` 计时。
-- [ ] 用 `cudaGetDeviceProperties` 把两张卡的 SM 数、显存位宽、频率打印出来，算出理论带宽。
+- [x] 写两个 kernel：vector add、RGB 转灰度（2D），用 `cudaEvent` 计时。
+- [ ] 用 `cudaGetDeviceProperties` 把两张卡的 SM 数、显存位宽、频率打印出来，算出理论带宽。（台式机已完成：896 GB/s、46.38 TFLOPS；笔记本还没跑）
 - **交付**：`cuda/01_basics/`
 
 ## 第 2 周（10/19–10/25）硬件调度和内存

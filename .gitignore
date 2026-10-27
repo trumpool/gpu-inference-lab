@@ -14,6 +14,7 @@ cuda/**/hello
 cuda/**/vector_add
 cuda/**/rgb_to_gray
 cuda/**/device_info
+cuda/**/copy_bandwidth
 
 # 性能分析报告：文件太大，重要的手动加进来
 *.ncu-rep
