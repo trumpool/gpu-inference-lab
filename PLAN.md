@@ -79,7 +79,7 @@ SGLang 的大部分代码是 Python，包括调度、radix cache、API、模型�
 - [x] 装 PyTorch：在 pytorch.org 选 CUDA 12.8 或更新的 wheel。确认 `torch.cuda.get_device_capability()` 返回 `(12, 0)`。Triton 会随 PyTorch 一起装好。
 - [x] 用 `nvcc` 编译并跑通一个 hello-world kernel。
 - [x] 试一下 `ncu`（Nsight Compute）能不能读到硬件计数器。读不到就记下来，第 4 周再决定要不要给台式机装 Ubuntu 双系统。
-- [ ] 配好从 Mac 远程连台式机：用 VS Code 或 Cursor 的 Remote-SSH；人不在家时用 Tailscale。
+- [ ] 配好从 Mac 远程连台式机：用 VS Code 或 Cursor 的 Remote-SSH；人不在家时用 Tailscale。（10/31：局域网内 Mac → SSH → WSL 已经通了，步骤见 [docs/setup-windows-wsl2.md](docs/setup-windows-wsl2.md) 第 3 节；还差 Tailscale）
 - [x] 建 GitHub 仓库 `gpu-inference-lab`（私有）和目录骨架。
 - **交付**：`notes/env.md`，记下两台机器的 GPU 型号、compute capability，以及驱动、CUDA、PyTorch 的版本。
 
